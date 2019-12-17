@@ -45,8 +45,8 @@ function ColorPoint() {
         if (this.pos_y > MAX_Y) {
             this.pos_y = MAX_Y;
             this.vel_y *= -1;
-        } else if (this.pos_y < MIN_X) {
-            this.pos_y = MIN_X;
+        } else if (this.pos_y < MIN_Y) {
+            this.pos_y = MIN_Y;
             this.vel_y *= -1;
         }
     };
@@ -138,7 +138,7 @@ function draw() {
 
     for (let i = 0; i < points.length; i++) {
         points[i].update();
-        // points[i].display();
+        points[i].display();
         for (let j = 0; j < points.length; j++) {
             if (i != j) {
                 points[i].repel(points[j]);    
@@ -146,7 +146,7 @@ function draw() {
         }
     }
 
-    image(img, 0, 0);
+    // image(img, 0, 0);
 }
 
 function midiMessageHandler(data) {
